@@ -1,0 +1,42 @@
+
+This project contains two types of datasets constructed for research on point cloud incompleteness, based on Spherical Removal and Axis Cut, each provided with 50% and 75% missing ratios.
+
+1. Spherical Removal Dataset
+
+Folder Names: data_ourh5(drop50), data_ourh5(drop75)
+
+Generation Method: Randomly sample a spherical region within the overall point cloud and remove all points inside, simulating local incompleteness.
+
+Missing Ratios:
+
+    drop50: approximately 50% of points removed
+
+    drop75: approximately 75% of points removed
+
+File Structure:
+
+    Completion3D_airplane/
+
+       train/, val/, test/ subsets
+
+    saveData_h5_convention/ and saveData_txt/ for intermediate or converted formats
+
+    Associated .json files providing indexing and configuration
+
+Characteristics: This method closely resembles missing data caused by local occlusions in real-world point cloud scanning.
+
+2. Axis Cut Dataset
+
+Folder Names: data_ourh5(axisCut50), data_ourh5(axisCut75)
+
+Generation Method: Perform planar slicing along a coordinate axis and discard all points on one side of the slicing plane, simulating large-scale structural incompleteness.
+
+Missing Ratios:
+
+     axisCut50: approximately 50% of points removed
+
+     axisCut75: approximately 75% of points removed
+
+File Structure: Same as the spherical removal dataset (including train/, val/, test/ subsets and corresponding configuration files).
+
+Characteristics: This method emphasizes extreme incompleteness scenarios, making it more suitable for testing model performance in large-scale missing and reconstruction tasks.
